@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add two numbers</title>
+</head>
+
+<body>
+    <div>
+        <form>
+            <div><label for="firstNumber">first number</label>
+                <input type="text" id="firstNumber" />
+            </div>
+            <div><label for="secondNumber">second number</label>
+                <input type="text" id="secondNumber" />
+            </div>
+            <div><label for="thirdNumber">third number</label>
+                <input type="text" id="thirdNumber" />
+            </div>
+            <div><label for="secmax">secmax</label>
+                <input type="text" id="secmax" />
+            </div>
+            <button type="button" onclick="doAdd();">secmax</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function doAdd() {
+            let first = parseInt(document.getElementById("firstNumber").value);
+            let second = parseInt(document.getElementById("secondNumber").value);
+             let third = parseInt(document.getElementById("thirdNumber").value);
+            let max = Math.max(first, second, third);
+            let secondMax;
+
+            if (first !== max) {
+                secondMax = Math.max(first, second === max ? third : second);
+            } else if (second !== max) {
+                secondMax = Math.max(second, first === max ? third : first);
+            } else {
+                secondMax = Math.max(third, first === max ? second : first);
+            }
+            document.getElementById("secmax").value = secondMax;
+        }
+    </script>
+</body>
+
+</html>

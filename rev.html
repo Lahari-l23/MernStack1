@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> REV </title>
+    <style type="text/css">
+        @import url("bigof2.css");
+    </style>
+</head>
+
+<body>
+    <div id="data">
+        <label for="firstNum"> First Number: </label>
+        <input type="text" id="firstNum">
+    </div>
+    <div>
+        <p id="outputPara" onclick="rev()"> Click Me to get the Answer </p>
+    </div>
+    <script>
+        function rev() {
+            let num1 = document.getElementById("firstNum").value;
+                let reversedNum = num1.split('').reverse().join('');
+                document.getElementById("outputPara").innerHTML = "Reversed: " + reversedNum;
+            
+        }
+    </script>
+</body>
+
+</html>
